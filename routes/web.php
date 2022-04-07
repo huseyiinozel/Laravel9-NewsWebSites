@@ -25,7 +25,7 @@ Route::get('/welcome', function () {
 });
 
 // 3- controller fonksiyonu ile cagiriyoruz
-Route::get('/index',[HomeController::class,'index'])->name('home');
+Route::get('/',[HomeController::class,'index'])->name('home');
 
 //4 - route -> controller -> view
 Route::get('/test',[HomeController::class,'test'])->name('test');

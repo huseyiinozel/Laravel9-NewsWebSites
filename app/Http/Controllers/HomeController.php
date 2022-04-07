@@ -9,11 +9,11 @@ class HomeController extends Controller
     //
     public  function index()
     {
-        echo "index function";
+        return view('home.index');
     }
     public  function test()
     {
-        echo view('home.test');
+        return view('home.test');
 
     }
     public  function param($id,$number)
@@ -25,7 +25,7 @@ class HomeController extends Controller
         echo "multiplication : ", $number*$id;
         */
         // kolay yol
-        echo view('home.test2',
+        return view('home.test2',
             [
                 'id' => $id,
                 'number'=> $number
@@ -40,7 +40,7 @@ class HomeController extends Controller
         echo "first name : ",$_REQUEST["fname"];
         echo "<br> last name : ",$_REQUEST["lname"];
         */
-        echo view('home.test3',
+        return view('home.test3',
             [
                 'fname' =>$_REQUEST["fname"],
                 'lname'=> $_REQUEST["lname"]
