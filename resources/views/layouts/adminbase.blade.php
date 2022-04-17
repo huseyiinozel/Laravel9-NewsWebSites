@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bootsrtap Free Admin Template - SIMINTA | Admin Dashboad Template</title>
     <!-- Core CSS - Include with every page -->
-    <link href="{{asset('assets')}}/admin/plugins/bootstrap/bootstrap.css" rel="stylesheet" />
-    <link href="{{asset('assets')}}/admin/font-awesome/css/font-awesome.css" rel="stylesheet" />
-    <link href="{{asset('assets')}}/admin/plugins/pace/pace-theme-big-counter.css" rel="stylesheet" />
-    <link href="{{asset('assets')}}/admin/css/style.css" rel="stylesheet" />
-    <link href="{{asset('assets')}}/admin/css/main-style.css" rel="stylesheet" />
+    <link href="{{asset('assets')}}/admin/assets/plugins/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="{{asset('assets')}}/admin/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="{{asset('assets')}}/admin/assets/plugins/pace/pace-theme-big-counter.css" rel="stylesheet" />
+    <link href="{{asset('assets')}}/admin/assets/css/style.css" rel="stylesheet" />
+    <link href="{{asset('assets')}}/admin/assets/css/main-style.css" rel="stylesheet" />
     @yield("head")
 </head>
 <body>

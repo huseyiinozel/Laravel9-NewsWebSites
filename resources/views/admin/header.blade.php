@@ -11,7 +11,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="{{asset('assets')}}/admin/index.html">
-                <img src="{{asset('assets')}}/admin/img/logo.png" alt="" />
+                <img src="{{asset('assets')}}/admin/assets/img/logo.png" alt="" />
             </a>
         </div>
         <!-- end navbar-header -->
@@ -232,4 +232,6 @@
         <!-- end navbar-top-links -->
 
     </nav>
-    <!-- end navbar top -->
+
+
+<!-- end wrapper -->

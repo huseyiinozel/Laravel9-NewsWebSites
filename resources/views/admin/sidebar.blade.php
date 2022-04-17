@@ -7,7 +7,7 @@
                 <!-- user image section-->
                 <div class="user-section">
                     <div class="user-section-inner">
-                        <img src="{{asset('assets')}}/admin/img/user.jpg" alt="">
+                        <img src="{{asset('assets')}}/admin/assets/img/user.jpg" alt="">
                     </div>
                     <div class="user-info">
                         <div>Jonny <strong>Deen</strong></div>
@@ -121,7 +121,7 @@
         <!-- end side-menu -->
     </div>
     <!-- end sidebar-collapse -->
-</nav>
+    </nav>
 <!-- end navbar side -->
 
 
