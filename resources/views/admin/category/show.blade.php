@@ -4,6 +4,8 @@
 
 
 @section('content')
+    /*
+    */
     <div id="page-wrapper">
 
         <div class="row">
@@ -15,7 +17,7 @@
                     <a href="{{route('admin.category.destroy',['id'=>$data->id])}}"  onclick="return confirm ('Deleting !! Are you sure ?')" class="btn btn-danger">Delete</a>
 
                 </div>
-                &nbsp;//
+                &nbsp;
 
             </div>
             <!--End Page Header -->
