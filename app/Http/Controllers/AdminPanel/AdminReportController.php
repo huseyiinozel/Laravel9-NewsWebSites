@@ -4,29 +4,12 @@ namespace App\Http\Controllers\AdminPanel;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Report;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class CategoryController extends Controller
+class AdminReportController extends Controller
 {
-    protected $appends = [
-        'getParentsTree'
-    ];
-    public static function getParentsTree($category, $title)
-    {
-        if ($category->parent_id == 0)
-        {
-            return $title;
-        }
-        $parent = Category::find($category->parent_id);
-        $title= $parent->title . ' > ' . $title;
-        return CategoryController::getParentsTree($parent, $title);
-
-
-    }
-
-
-
 
 
 
@@ -39,14 +22,14 @@ class CategoryController extends Controller
     public function index()
     {
        //
-       $data = Category::all();
-       return view('admin.category.index',[
+       $data = Report::all();
+       return view('admin.report.index',[
            'data'=> $data
 
        ]);
 
 
-        return view("admin.category.index");
+
     }
 
     /**
@@ -58,7 +41,7 @@ class CategoryController extends Controller
     {
         //
         $data =Category::all();
-        return view('admin.category.create',[
+        return view('admin.report.create',[
             'data'=>$data
 
         ]);
@@ -74,17 +57,19 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         //
-        $data=new Category();
-        $data->parent_id = $request->parent_id;
+        $data=new Report();
+        $data->category_id = $request->category_id;
+        $data->user_id = 0; //$request->user_id;
         $data->title = $request->title;
         $data->keywords = $request->keywords;
         $data->description = $request->description;
+        $data->detail = $request->detail;
         $data->status= $request->status;
         if ($request->file('image')){
             $data->image= $request->file('image')->store('images');
         }
         $data->save();
-        return redirect('admin/category');
+        return redirect('admin/report');
 
 
 
@@ -93,14 +78,14 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\Report  $report
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category,$id)
+    public function show(Report $report,$id)
     {
         //
-        $data =$category::find($id);
-        return view('admin.category.show',[
+        $data =Report::find($id);
+        return view('admin.report.show',[
             'data' =>$data
 
         ]);
@@ -109,14 +94,14 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\Report  $report
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category,$id)
+    public function edit(Report $report,$id)
     {
-        $data =$category::find($id);
+        $data =Report::find($id);
         $datalist =Category::all();
-        return view('admin.category.edit',[
+        return view('admin.report.edit',[
             'data' =>$data,
             'datalist' => $datalist
 
@@ -127,39 +112,44 @@ class CategoryController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\Report  $report
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category,$id)
+    public function update(Request $request, Report $report,$id)
     {
         //
-        $data =Category::find($id);
-        $data->parent_id = $request->parent_id;
+        $data =Report::find($id);
+        $data->category_id = $request->category_id;
+        $data->user_id = 0; //$request->user_id;
         $data->title = $request->title;
         $data->keywords = $request->keywords;
         $data->description = $request->description;
+        $data->detail = $request->detail;
         $data->status= $request->status;
         if ($request->file('image')){
             $data->image= $request->file('image')->store('images');
         }
         $data->save();
-        return redirect('admin/category');
+        return redirect('admin/report');
+
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\Report  $report
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category,$id)
+    public function destroy(Report $report,$id)
     {
         //
-        $data =Category::find($id);
+        $data =Report::find($id);
         if ($data->image && Storage::disk('public')->exists($data->image)){
             Storage::delete($data->image);
         }
+
+
         $data->delete();
-        return redirect('admin/category');
+        return redirect('admin/report');
     }
 }

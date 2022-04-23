@@ -41,7 +41,7 @@
                 <a href="/admin/category"><i class="fa fa-square " style="color:darkgrey"></i> Categories</a>
             </li>
             <li class="">
-                <a href="/admin/newsdata"><i class="fa fa-file-o"style="color:black"></i> News Data</a>
+                <a href="/admin/report"><i class="fa fa-file-o"style="color:black"></i> Report</a>
             </li>
             <li class="">
                 <a href="/admin/comment"><i class="fa fa-comment "style="color:lightcoral"></i> Comments</a>

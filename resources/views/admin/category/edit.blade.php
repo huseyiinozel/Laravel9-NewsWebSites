@@ -24,9 +24,28 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-6">
-                            <form role="form" action="{{route('admin.category.update',['id'=>$data->id])}}" method="post">
+                            <form role="form" action="{{route('admin.category.update',['id'=>$data->id])}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
+                                    <label>Parent Category</label>
+                                    <select class="form-control select2" name="parent_id" style="...">
+                                        <option value="0" selected="selected">Main Category</option>
+                                        @foreach($datalist as $rs)
+                                            <option value="{{$rs->id}}" @if ($rs->id == $data->parent_id) selected="selected" @endif>
+                                            {{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs,$rs->title)}}
+                                            </option>
+                                        @endforeach
+
+                                    </select>
+                                </div>
+
+
+
+
+
+
+
+                                    <div class="form-group">
                                     <label>Title</label>
                                     <input type="text" class="form-control" name="title" value="{{$data->title}}" >
 
@@ -44,7 +63,7 @@
 
                                 <div class="form-group">
                                     <label>İmage</label>
-                                    <input type="file">
+                                    <input type="file" name="image">
                                 </div>
                                 <div class=form-group">
                                     <label>Status</label>
