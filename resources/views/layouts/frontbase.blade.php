@@ -36,15 +36,19 @@
 
 <body id = "top">
 
-@include("home.header")
+@section('header')
+@show
 
-@section('sidebar')
-    @include("home.sidebar")
-@show
+
+
 @section('slider')
+
+
 @show
+
 
 @yield('content')
+
 @include("home.footer")
 @yield('foot')
 </body >

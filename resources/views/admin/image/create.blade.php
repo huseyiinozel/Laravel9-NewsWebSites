@@ -1,6 +1,6 @@
 @extends('layouts.adminbase')
 
-@section('title', 'Add Report')
+@section('title', 'Add Category')
 
 
 @section('content')
@@ -12,7 +12,7 @@
             <!-- Page Header -->
             <div class="col-lg-12">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Add Report</h1>
+                    <h1 class="page-header">Add Category</h1>
                 </div>
 
             </div>
@@ -24,12 +24,12 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-6">
-                            <form role="form" action="{{route('admin.report.store')}}" method="post" enctype="multipart/form-data">
+                            <form role="form" action="{{route('admin.category.store')}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
-                                    <label>Parent Report</label>
-                                    <select class="form-control select2" name="category_id" style="...">
-
+                                    <label>Parent Category</label>
+                                    <select class="form-control select2" name="parent_id" style="...">
+                                        <option value="0" selected="selected">Main Category</option>
                                         @foreach($data as $rs)
                                             <option value="{{$rs->id}}">{{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs,$rs->title)}}</option>
                                         @endforeach
@@ -48,25 +48,20 @@
 
                                 </div>
                                 <div class="form-group">
+                                    <label>Slug</label>
+                                    <input type="text" class="form-control" name="slug" placeholder="Slug">
+
+                                </div>
+                                <div class="form-group">
                                     <label>Keywords</label>
                                     <input type="text" class="form-control" name="keywords" placeholder="Keywords">
 
                                 </div>
-
-                                    <div class="form-group">
-                                        <label>Description</label>
+                                <div class="form-group">
+                                    <label>Description</label>
                                     <input type="text" class="form-control" name="description" placeholder="Description">
 
                                 </div>
-
-                                <div class="form-group">
-                                    <label>Detail</label>
-
-                                <textarea class="form-control" name="detail" placeholder="Detail">
-                                    </textarea>
-                                </div>
-
-
 
                                 <div class="form-group">
                                     <label>İmage</label>

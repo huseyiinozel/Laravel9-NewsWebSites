@@ -57,4 +57,5 @@
 
     </div>
 
-</header> <!-- end header -->
+</header>
+<!-- end header -->

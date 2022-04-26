@@ -1,10 +1,12 @@
 <?php
 
-use App\Http\Controllers\AdminPanel\AdminReportController;
+use App\Http\Controllers\AdminPanel\AdminNewsController;
+use App\Http\Controllers\AdminPanel\ImageController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminPanel\HomeController as AdminHomeController;
 use App\Http\Controllers\AdminPanel\CategoryController as AdminCategoryController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -58,8 +60,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
             Route::get('/destroy/{id}','destroy')->name('destroy');
             Route::get('/show/{id}','show')->name('show');
 });
-    // admin report routes
-    Route::prefix('/report')->name('report.')->controller(AdminReportController::class)->group(function () {
+    // admin news routes
+    Route::prefix('/news')->name('news.')->controller(AdminNewsController::class)->group(function () {
         Route::get('/','index')->name('index');
         Route::get('/create','create')->name('create');
         Route::post('/store','store')->name('store');
@@ -67,6 +69,13 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::post('/update/{id}','update')->name('update');
         Route::get('/destroy/{id}','destroy')->name('destroy');
         Route::get('/show/{id}','show')->name('show');
+    });
+    // admin image routes
+    Route::prefix('/image')->name('image.')->controller(ImageController::class)->group(function () {
+        Route::get('/{nid}','index')->name('index');
+        Route::post('/store/{nid}','store')->name('store');
+        Route::get('/destroy/{nid}/{id}','destroy')->name('destroy');
+
     });
 
 });

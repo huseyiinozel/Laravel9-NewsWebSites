@@ -50,6 +50,12 @@
                                     <input type="text" class="form-control" name="title" value="{{$data->title}}" >
 
                                 </div>
+
+                                <div class="form-group">
+                                    <label>Slug</label>
+                                    <input type="text" class="form-control" name="slug" value="{{$data->slug}}" >
+
+                                </div>
                                 <div class="form-group">
                                     <label>Keywords</label>
                                     <input type="text" class="form-control" name="keywords"  value="{{$data->keywords}}">

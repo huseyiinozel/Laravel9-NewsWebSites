@@ -1,6 +1,6 @@
 @extends('layouts.adminbase')
 
-@section('title', 'Report List')
+@section('title', 'News List')
 
 
 @section('content')
@@ -13,8 +13,8 @@
             <!-- Page Header -->
             <div class="col-lg-12">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Report List</h1>
-                    <a href="{{route('admin.report.create')}}" class="btn btn-primary">Add Report</a>
+                    <h1 class="page-header">News List</h1>
+                    <a href="{{route('admin.news.create')}}" class="btn btn-primary">Add News</a>
 
 
                 </div>
@@ -26,9 +26,12 @@
                             <tr>
                                 <th style ="width:10px">Id </th>
                                 <th>Category</th>
+                                <th>Type</th>
+                                <th>Slug</th>
                                 <th>Title</th>
                                 <th>Description</th>
                                 <th>Image</th>
+                                <th>Image Gallery</th>
                                 <th>Status</th>
                                 <th style="width: 40px">Edit</th>
                                 <th style="width: 40px">Delete</th>
@@ -40,6 +43,8 @@
                             <tr class="success">
                                 <td>{{$rs->id}}</td>
                                 <td> {{ \App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs->category, $rs->category->title) }}</td>
+                                <td>{{$rs->type}} </td>
+                                <td>{{$rs->slug}} </td>
                                 <td>{{$rs->title}} </td>
                                 <td>{{$rs->description}} </td>
 
@@ -48,11 +53,17 @@
                                     <img src="{{Storage::url($rs->image)}}" style="height: 40px">
                                     @endif
                                 </td>
+                                <td> <a href="{{route('admin.image.index',['nid'=>$rs->id])}}"
+                                    onclick="return !window.open(this.href, '','top=50 left=100 width=1100,height=700')">
+                                    <img src="{{asset('assets')}}/admin/assets/img/gallery.jpg" style="height: 40px" >
+                                    </a>
+
+                                </td>
                                 <td>{{$rs->status}}</td>
-                                <td><a href="{{route('admin.report.edit',['id'=>$rs->id])}}" class="btn btn-primary btn-info">Edit</a> </td>
-                                <td><a href="{{route('admin.report.destroy',['id'=>$rs->id])}}" class="btn btn-primary btn-danger"
+                                <td><a href="{{route('admin.news.edit',['id'=>$rs->id])}}" class="btn btn-primary btn-info">Edit</a> </td>
+                                <td><a href="{{route('admin.news.destroy',['id'=>$rs->id])}}" class="btn btn-primary btn-danger"
                                     onclick="return confirm ('Deleting !! Are you sure ?')">Delete</a> </td>
-                                <td><a href="{{route('admin.report.show',['id'=>$rs->id])}}" class="btn btn-primary btn-success ">Show</a> </td>
+                                <td><a href="{{route('admin.news.show',['id'=>$rs->id])}}" class="btn btn-primary btn-success ">Show</a> </td>
                             </tr>
 
                             @endforeach

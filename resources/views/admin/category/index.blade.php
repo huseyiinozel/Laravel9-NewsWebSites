@@ -28,6 +28,7 @@
                                 <th>Parent</th>
                                 <th>Title</th>
                                 <th>Image</th>
+                                <th>Slug</th>
                                 <th>Status</th>
                                 <th style="width: 40px">Edit</th>
                                 <th style="width: 40px">Delete</th>
@@ -46,6 +47,7 @@
                                     <img src="{{Storage::url($rs->image)}}" style="height: 40px">
                                     @endif
                                 </td>
+                                <td>{{$rs->slug}}</td>
                                 <td>{{$rs->status}}</td>
                                 <td><a href="{{route('admin.category.edit',['id'=>$rs->id])}}" class="btn btn-primary btn-info">Edit</a> </td>
                                 <td><a href="{{route('admin.category.destroy',['id'=>$rs->id])}}" class="btn btn-primary btn-danger"
