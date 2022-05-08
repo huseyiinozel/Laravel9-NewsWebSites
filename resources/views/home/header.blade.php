@@ -1,40 +1,43 @@
+@section('icon', Storage::url($setting->icon))
+
 <header class="short-header">
 
     <div class="gradient-block"></div>
 
     <div class="row header-content">
+        @php
+        $mainCategories = \App\Http\Controllers\HomeController::maincategorylist()
+        @endphp
 
         <div class="logo">
-            <a href="{{asset('assets')}}/index.html">Author</a>
-            </div>
+            <a href="{{route('home')}}"></a>
+        </div>
+
         <nav id="main-nav-wrap">
+
             <ul class="main-navigation sf-menu">
-                <li class="current"><a href="{{asset('assets')}}/index.html" title="">Home</a></li>
+                @foreach($mainCategories as $rs)
                 <li class="has-children">
-                    <a href="{{asset('assets')}}/category.html" title="">Categories</a>
-                    <ul class="sub-menu">
-                        <li><a href="{{asset('assets')}}/category.html">Wordpress</a></li>
-                        <li><a href="{{asset('assets')}}/category.html">HTML</a></li>
-                        <li><a href="{{asset('assets')}}/category.html">Photography</a></li>
-                        <li><a href="{{asset('assets')}}/category.html">UI</a></li>
-                        <li><a href="{{asset('assets')}}/category.html">Mockups</a></li>
-                        <li><a href="{{asset('assets')}}/category.html">Branding</a></li>
-                    </ul>
+                    <a href="{{route('categorynews',['id'=>$rs->id,'slug'=>$rs->slug])}}" > {{$rs->title}}</a>
+
+
+                        <ul class="sub-menu">
+                            @if(count($rs->children))
+
+                                @include('home.categorytree',['children' => $rs->children])
+
+                            @endif
+
+                        </ul>
+
+
                 </li>
-                <li class="has-children">
-                    <a href="{{asset('assets')}}/single-standard.html" title="">Blog</a>
-                    <ul class="sub-menu">
-                        <li><a href="{{asset('assets')}}/single-video.html">Video Post</a></li>
-                        <li><a href="{{asset('assets')}}/single-audio.html">Audio Post</a></li>
-                        <li><a href="{{asset('assets')}}/single-gallery.html">Gallery Post</a></li>
-                        <li><a href="{{asset('assets')}}/single-standard.html">Standard Post</a></li>
-                    </ul>
-                </li>
-                <li><a href="{{asset('assets')}}/style-guide.html" title="">Styles</a></li>
-                <li><a href="{{asset('assets')}}/about.html" title="">About</a></li>
-                <li><a href="{{asset('assets')}}/contact.html" title="">Contact</a></li>
+
+                @endforeach
             </ul>
+
         </nav> <!-- end main-nav-wrap -->
+
 
         <div class="search-wrap">
 
@@ -56,6 +59,7 @@
         </div> <!-- end triggers -->
 
     </div>
+
 
 </header>
 <!-- end header -->

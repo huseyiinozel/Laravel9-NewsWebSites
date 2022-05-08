@@ -42,6 +42,9 @@ Route::get('/param/{id}/{number}',[HomeController::class,'param'])->name('param'
 
 Route::post('/save',[HomeController::class,'save'])->name('save');
 
+Route::get('/news/{id}',[HomeController::class,'news'])->name('news');
+Route::get('/categorynews/{id}/{slug}',[HomeController::class,'categorynews'])->name('categorynews');
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
@@ -49,6 +52,10 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 // admin panel
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/',[AdminHomeController::class,'index'])->name('index');
+// admin panel general
+Route::get('/setting',[AdminHomeController::class,'setting'])->name('setting');
+Route::post('/setting',[AdminHomeController::class,'settingUpdate'])->name('setting.update');
+
 
 // admin category routes
         Route::prefix('/category')->name('category.')->controller(AdminCategoryController::class)->group(function () {

@@ -1,6 +1,11 @@
 @extends('layouts.frontbase')
 
-@section('title', 'News Web Sites')
+@section('title', $setting->title)
+@section('description', $setting->description)
+@section('keywords', $setting->keywords)
+@section('icon', Storage::url($setting->icon))
+
+
 @include('home.header')
 
 
@@ -19,34 +24,42 @@
                     @foreach($newslist1 as $rs)
                     <article class="brick entry format-standard animate-this">
         <div class="entry-thumb">
-            <a href="{{asset('assets')}}/a.html" class="thumb-link">
-                <img src="{{Storage::url($rs->image)}}"  style="width: 286px;height: 296px" alt="building">
+            <a href="{{route('news',['id'=>$rs->id])}}" class="thumb-link">
+                <img src="{{Storage::url($rs->image)}}"  alt="building">
             </a>
         </div>
+
         <div class="entry-text">
             <div class="entry-header">
 
                 <div class="entry-meta">
                			<span class="cat-links">
-               				<a href="#">Design</a>
-               				<a href="#">Photography</a>
+               				<a href="{{route('news',['id'=>$rs->id])}}">{{$rs->type}}</a>
                			</span>
                 </div>
 
                 <h1 class="entry-title"><a href="{{$rs->title}}"></a></h1>
 
-            </div>
-            <div class="entry-excerpt">
-                {{$rs->title }}
+
+                <div class="entry-meta">
+               			<span class="cat-links">
+               				<a href="{{route('news',['id'=>$rs->id])}}">{{$rs->title}}</a>
+               			</span>
+                </div>
             </div>
         </div>
+    </article>
+                @endforeach
 
-    </article> <!-- end article -->
-                    @endforeach
+
+
+    <!-- end article -->
+
 
             </div> <!-- end brick-wrapper -->
 
     </div> <!-- end row -->
+
 
     <div class="row">
 

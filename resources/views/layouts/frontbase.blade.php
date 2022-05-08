@@ -3,13 +3,16 @@
 <!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
 <head>
+    <meta charset="utf-8">
     <title>@yield('title') </title>
+    <meta name="description" content="@yield('description')">
+    <meta name="keywords" content="@yield('keywords')">
+    <meta name ="author" content="Hüseyin Özel">
+    <link rel="icon" href="@yield("icon")" type="image/x-icon">
+
     <!--- basic page needs
     ================================================== -->
-    <meta charset="utf-8">
-    <title>Abstract</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
+
 
     <!-- mobile specific metas
     ================================================== -->
@@ -27,10 +30,7 @@
     <script src="{{asset('assets')}}/js/modernizr.js"></script>
     <script src="{{asset('assets')}}/js/pace.min.js"></script>
 
-    <!-- favicons
-     ================================================== -->
-    <link rel="shortcut icon" href="{{asset('assets')}}/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="{{asset('assets')}}/favicon.ico" type="image/x-icon">
+
     @yield("head")
 </head>
 

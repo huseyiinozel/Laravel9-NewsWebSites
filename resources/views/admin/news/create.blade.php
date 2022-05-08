@@ -2,7 +2,7 @@
 
 @section('title', 'Add News')
 @section('head')
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
 @endsection
 
 @section('content')
@@ -78,6 +78,16 @@
 
                                 <textarea class="textarea"  id="detail" name="detail" placeholder="Detail">
                                     </textarea>
+                                    <script>
+                                        ClassicEditor
+                                            .create( document.querySelector( '#detail' ) )
+                                            .then( editor => {
+                                                console.log( editor );
+                                            } )
+                                            .catch( error => {
+                                                console.error( error );
+                                            } );
+                                    </script>
 
                                 </div>
 
@@ -119,13 +129,7 @@
 
 @endsection
 @section("foot")
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 
-    <script>
-        $(function () {
-            $('.textarea').summernote();
-        });
-    </script>
 
 @endsection
 

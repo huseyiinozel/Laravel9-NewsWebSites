@@ -35,12 +35,6 @@
                                         @endforeach
 
                                     </select>
-
-
-
-
-
-
                                 </div>
                                 <div class="form-group">
                                     <label>Title</label>
@@ -78,24 +72,11 @@
 
                             </form>
                         </div>
-
-
-
-
-                                </div>
+                    </div>
 
                         </div>
                     </div>
                 </div>
             </div>
-
-
-
-
-
-
-
-
-
 @endsection
 
