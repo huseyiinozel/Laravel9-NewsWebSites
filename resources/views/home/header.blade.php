@@ -1,4 +1,4 @@
-@section('icon', Storage::url($setting->icon))
+
 
 <header class="short-header">
 
@@ -34,6 +34,10 @@
                 </li>
 
                 @endforeach
+                    <li><a href="{{route('about')}}" title="">About Us</a></li>
+                    <li><a href="{{route('references')}}" title="">References</a></li>
+                    <li><a href="{{route('contact')}}" title="">Contact</a></li>
+
             </ul>
 
         </nav> <!-- end main-nav-wrap -->

@@ -31,9 +31,9 @@ return new class extends Migration
             $table->string('instagram',100)->nullable();
             $table->string('twitter',100)->nullable();
             $table->string('youtube',100)->nullable();
-            $table->text('aboutus')->nullable();
-            $table->text('contact')->nullable();
-            $table->text('references')->nullable();
+            $table->longText('aboutus')->nullable();
+            $table->longText('contact')->nullable();
+            $table->longText('references')->nullable();
             $table->string('icon',100)->nullable();
             $table->string('status',5)->nullable()->default('False');
             $table->timestamps();
