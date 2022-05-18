@@ -146,7 +146,6 @@ class AdminNewsController extends Controller
      */
     public function destroy(News $report, $id)
     {
-        //
         $data =News::find($id);
         if ($data->image && Storage::disk('public')->exists($data->image)){
             Storage::delete($data->image);
@@ -155,5 +154,6 @@ class AdminNewsController extends Controller
 
         $data->delete();
         return redirect('admin/news');
+        //
     }
 }

@@ -22,30 +22,36 @@
 
 
 
-                        <p>{!! $setting->contact !!} </p>
+
                     </div>
 
-
-                        <form name="cForm" id="cForm" method="post" action="">
+                            @include('home.message')
+                        <form name="cForm" id="cForm" method="post" action="{{route('storemessage')}}" >
                             <fieldset>
+                                @csrf
 
                                 <div class="form-field">
-                                    <input name="cName" type="text" id="cName" class="full-width" placeholder="Your Name" value="">
+                                    <input name="name" type="text" id="cName" class="full-width" placeholder="Name&Surname" value="">
                                 </div>
 
                                 <div class="form-field">
-                                    <input name="cEmail" type="text" id="cEmail" class="full-width" placeholder="Your Email" value="">
+                                    <input name="phone" type="tel" id="cEmail" class="full-width" placeholder="Phone" value="">
                                 </div>
 
                                 <div class="form-field">
-                                    <input name="cWebsite" type="text" id="cWebsite" class="full-width" placeholder="Website"  value="">
+                                    <input name="email" type="email" id="cWebsite" class="full-width" placeholder="E-mail"  value="">
                                 </div>
 
                                 <div class="message form-field">
-                                    <textarea name="cMessage" id="cMessage" class="full-width" placeholder="Your Message" ></textarea>
+                                    <textarea name="subject" id="cMessage" type="text" class="full-width" placeholder="Subject" ></textarea>
+                                </div>
+                                <div class="message form-field">
+                                    <textarea name="message" id="cMessage" type="text" class="full-width" placeholder="Message" ></textarea>
                                 </div>
 
-                                <button type="submit" class="submit button-primary full-width-on-mobile">Submit</button>
+
+
+                                <button type="submit"  class="submit button-primary full-width-on-mobile">Submit</button>
 
                             </fieldset>
                         </form> <!-- end form -->

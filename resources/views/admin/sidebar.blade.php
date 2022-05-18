@@ -50,7 +50,7 @@
                 <a href="/admin/faq"><i class="fa fa-question"style="color:skyblue"></i> FAQ</a>
             </li>
             <li class="">
-                <a href="/admin/messages"><i class="fa fa-comment-o"style="color:lightgreen"></i> Messages</a>
+                <a href="{{route('admin.message.index')}}"><i class="fa fa-comment-o"style="color:lightgreen"></i> Messages</a>
             </li>
             <li class="">
                 <a href="/admin/social"><i class="fa fa-twitter"style="color:blue"></i> Social</a>
