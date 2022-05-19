@@ -37,6 +37,7 @@
                     <li><a href="{{route('about')}}" title="">About Us</a></li>
                     <li><a href="{{route('references')}}" title="">References</a></li>
                     <li><a href="{{route('contact')}}" title="">Contact</a></li>
+                    <li><a href="{{route('faq')}}" title="">FAQ</a></li>
 
             </ul>
 

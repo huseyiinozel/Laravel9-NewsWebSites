@@ -47,7 +47,7 @@
                 <a href="/admin/comment"><i class="fa fa-comment "style="color:lightcoral"></i> Comments</a>
             </li>
             <li class="">
-                <a href="/admin/faq"><i class="fa fa-question"style="color:skyblue"></i> FAQ</a>
+                <a href="{{route('admin.faq.index')}}"><i class="fa fa-question"style="color:skyblue"></i> FAQ</a>
             </li>
             <li class="">
                 <a href="{{route('admin.message.index')}}"><i class="fa fa-comment-o"style="color:lightgreen"></i> Messages</a>
