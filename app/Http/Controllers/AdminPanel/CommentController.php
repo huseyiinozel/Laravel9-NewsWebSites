@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\AdminPanel;
 
 use App\Http\Controllers\Controller;
-use App\Models\Faq;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 
-class FaqController extends Controller
+class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,9 @@ class FaqController extends Controller
      */
     public function index()
     {
-        $data = Faq::all();
-        return view('admin.faq.index',[
+        $data = Comment::all();
+
+        return view('admin.comment.index',[
             'data'=> $data
 
         ]);
@@ -30,11 +31,7 @@ class FaqController extends Controller
      */
     public function create()
     {
-        $data =Faq::all();
-        return view('admin.faq.create',[
-            'data'=>$data
-
-        ]);
+        //
     }
 
     /**
@@ -45,14 +42,7 @@ class FaqController extends Controller
      */
     public function store(Request $request)
     {
-        $data=new Faq();
-        $data->question = $request->question;
-        $data->answer = $request->answer;
-        $data->status= $request->status;
-
-        $data->save();
-        return redirect('admin/faq');
-
+        //
     }
 
     /**
@@ -63,8 +53,10 @@ class FaqController extends Controller
      */
     public function show($id)
     {
-        $data =Faq::find($id);
-        return view('admin.faq.show',[
+        $data =Comment::find($id);
+
+        $data->save();
+        return view('admin.comment.show',[
             'data' =>$data
 
         ]);
@@ -78,12 +70,7 @@ class FaqController extends Controller
      */
     public function edit($id)
     {
-        $data =Faq::find($id);
-        return view('admin.faq.edit',[
-            'data' =>$data
-
-
-        ]);
+        //
     }
 
     /**
@@ -91,19 +78,14 @@ class FaqController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @param  \App\Models\Faq  $faq
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $data =Faq::find($id);
-        $data->question = $request->question;
-        $data->answer = $request->answer;
-        $data->status = $request->status;
-
+        $data=Comment::find($id);
+        $data->status=$request->status;
         $data->save();
-        return redirect('admin/faq');
-
+        return redirect(route('admin.comment.show',['id'=>$id]));
     }
 
     /**
@@ -114,11 +96,8 @@ class FaqController extends Controller
      */
     public function destroy($id)
     {
-        $data =Faq::find($id);
-
-
-
+        $data =Comment::find($id);
         $data->delete();
-        return redirect('admin/faq');
+        return redirect(route('admin.comment.index'));
     }
 }

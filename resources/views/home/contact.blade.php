@@ -25,7 +25,7 @@
 
                     </div>
 
-                            @include('home.message')
+                            @include('home.messages')
                         <form name="cForm" id="cForm" method="post" action="{{route('storemessage')}}" >
                             <fieldset>
                                 @csrf
