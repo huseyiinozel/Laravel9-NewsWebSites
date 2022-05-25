@@ -23,6 +23,41 @@
                     <ul class="entry-meta">
                         <li class="date">Updated at : {{$data->updated_at}}</li>
                         <li class="cat"><a href="{{route('categorynews',['id'=>$data->category->id,'slug'=>$data->category->slug])}}">{{$data->type}}</a><a href=""></a></li>
+                        @php
+                            $average= $data->comment->average('rate');
+
+
+                        @endphp
+                        <a href="#">{{$data->comment->count('id')}}  Reviews /{{number_format($average,1)}} </a>
+
+                        @if($average<=1.0)
+                            <i class="fa fa-star" ></i>
+                        @endif
+
+                        @if($average >=2.0 and $average <3.0  )
+                            <i class="fa fa-star "></i>
+                            <i class="fa fa-star "></i>
+                        @endif
+                        @if($average >= 3.0 and $average <4.0)
+                            <i class="fa fa-star "></i>
+                            <i class="fa fa-star "></i>
+                            <i class="fa fa-star "></i>
+                        @endif
+                        @if($average >=4 and $average <5.0)
+                            <i class="fa fa-star "></i>
+                            <i class="fa fa-star "></i>
+                            <i class="fa fa-star "></i>
+                            <i class="fa fa-star "></i>
+                        @endif
+                        @if($average>=5)
+                            <i class="fa fa-star "></i>
+                            <i class="fa fa-star "></i>
+                            <i class="fa fa-star "></i>
+                            <i class="fa fa-star "></i>
+                            <i class="fa fa-star "></i>
+                        @endif
+
+
                     </ul>
 
 

@@ -44,6 +44,41 @@
                 <div class="entry-meta">
                			<span class="cat-links">
                				<a href="{{route('news',['id'=>$rs->id])}}">{{$rs->title}}</a>
+                            <br>
+                             <a>{{$rs->comment->count('id')}}  Reviews  </a>
+                             @php
+                                 $average= $rs->comment->average('rate');
+
+
+                             @endphp
+                            @if($average<=1.0)
+                                <i class="fa fa-star" ></i>
+                            @endif
+
+                            @if($average >=2.0 and $average <3.0 )
+                                <i class="fa fa-star "></i>
+                                <i class="fa fa-star "></i>
+                            @endif
+                            @if($average >= 3.0 and $average <4.0)
+                                <i class="fa fa-star "></i>
+                                <i class="fa fa-star "></i>
+                                <i class="fa fa-star "></i>
+                            @endif
+                            @if($average >=4 and $average <5.0)
+                                <i class="fa fa-star "></i>
+                                <i class="fa fa-star "></i>
+                                <i class="fa fa-star "></i>
+                                <i class="fa fa-star "></i>
+                            @endif
+                            @if($average>=5)
+                                <i class="fa fa-star "></i>
+                                <i class="fa fa-star "></i>
+                                <i class="fa fa-star "></i>
+                                <i class="fa fa-star "></i>
+                                <i class="fa fa-star "></i>
+                            @endif
+
+
                			</span>
                 </div>
             </div>
