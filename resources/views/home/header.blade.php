@@ -34,11 +34,36 @@
                 </li>
 
                 @endforeach
+
                     <li><a href="{{route('about')}}" title="">About Us</a></li>
                     <li><a href="{{route('references')}}" title="">References</a></li>
                     <li><a href="{{route('contact')}}" title="">Contact</a></li>
                     <li><a href="{{route('faq')}}" title="">FAQ</a></li>
+                    <li>
 
+                        <i class="fa fa-user fa-2x"></i>
+                        <br>
+                        @auth
+
+                            <a class="dropdown-toggle">{{Auth::user()->name}}
+
+                        </a>
+                    <li><a href="/logoutuser"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
+                    </li>
+                    @endauth
+                    @guest
+                        <!-- dropdown user-->
+                            <ul class="dropdown-menu dropdown-user">
+
+                            <li><a href="/loginuser"><i class="fa fa-user fa-fw"></i>Login</a>
+                            </li>
+                            <li><a href="/registeruser"><i class="fa fa-user-md fa-fw"></i>Register</a>
+                            </li>
+
+                        </ul>
+                            @endguest
+                        <!-- end dropdown-user -->
+                    </li>
             </ul>
 
         </nav> <!-- end main-nav-wrap -->
