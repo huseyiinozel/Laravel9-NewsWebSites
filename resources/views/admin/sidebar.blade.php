@@ -7,19 +7,24 @@
         <ul class="nav" id="side-menu">
             <li>
                 <!-- user image section-->
+
                 <div class="user-section">
                     <div class="user-section-inner">
                         <img src="{{asset('assets')}}/admin/assets/img/user.jpg" alt="">
                     </div>
                     <div class="user-info">
+                        @auth
 
                         <div> <a>{{Auth::user()->name}}</a></div>
-                        <div class="user-text-online">
+                        @endauth
+
+                            <div class="user-text-online">
                             <span class="user-circle-online btn btn-success btn-circle "></span>&nbsp;Online
                         </div>
                     </div>
                 </div>
                 <!--end user image section-->
+
             </li>
             <li class="">
                 <a href="/admin"><i class="fa fa-home"style="color:lightgreen"></i> Dashboard</a>
