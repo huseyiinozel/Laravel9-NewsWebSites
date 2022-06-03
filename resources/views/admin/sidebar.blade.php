@@ -1,3 +1,5 @@
+
+
 <nav class="navbar-default navbar-static-side" role="navigation">
     <!-- sidebar-collapse -->
     <div class="sidebar-collapse">
@@ -10,7 +12,8 @@
                         <img src="{{asset('assets')}}/admin/assets/img/user.jpg" alt="">
                     </div>
                     <div class="user-info">
-                        <div>Jonny <strong>Deen</strong></div>
+
+                        <div> <a>{{Auth::user()->name}}</a></div>
                         <div class="user-text-online">
                             <span class="user-circle-online btn btn-success btn-circle "></span>&nbsp;Online
                         </div>

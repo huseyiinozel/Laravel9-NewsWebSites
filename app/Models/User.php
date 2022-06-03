@@ -11,6 +11,7 @@ use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
 
+
 class User extends Authenticatable
 {
     use HasApiTokens;
@@ -63,4 +64,5 @@ class User extends Authenticatable
     {
         return $this->hasMany(Comment::class);
     }
+
 }
