@@ -15,7 +15,13 @@
                     <div class="user-info">
 
 
-                        <div> <a>{{Auth::user()->name}}</a></div>
+                        <div> <a>
+                                {{Auth::user()->name}}
+
+
+                            </a>
+
+                        </div>
 
 
                             <div class="user-text-online">
