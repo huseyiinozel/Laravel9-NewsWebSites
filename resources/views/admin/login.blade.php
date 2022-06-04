@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootsrtap Free Admin Template - SIMINTA | Admin Dashboad Template</title>
+    <title>Admin Login</title>
     <!-- Core CSS - Include with every page -->
     <link href="{{asset('assets')}}/admin/assets/plugins/bootstrap/bootstrap.css" rel="stylesheet" />
     <link href="{{asset('assets')}}/admin/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
@@ -29,9 +29,7 @@
 <div class="container">
 
     <div class="row">
-        <div class="col-md-4 col-md-offset-4 text-center logo-margin ">
-            <img src="{{asset('assets')}}/admin/assets/img/logo.png" alt=""/>
-        </div>
+
         <div class="col-md-4 col-md-offset-4">
             <div class="login-panel panel panel-default">
                 <div class="panel-heading">
@@ -54,7 +52,8 @@
                                 </label>
                             </div>
                             <!-- Change this to a button or input when using this as a form -->
-                            <a href="/admin" class="btn btn-lg btn-success btn-block">Login</a>
+
+                            <button type="submit"  class="btn btn-lg btn-success btn-block">Login</button>
                             <a href="/registeruser" class="btn btn-lg btn-success btn-block">Register</a>
                         </fieldset>
                     </form>
