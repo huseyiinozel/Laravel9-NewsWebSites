@@ -44,12 +44,21 @@
                         <i class="fa fa-user fa-2x"></i>
                         <br>
                         @auth
-
-                            <a class="dropdown-toggle">{{Auth::user()->name}}
-
-                        </a>
-                    <li><a href="/logoutuser"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
-                    </li>
+                            <ul class="sub-menu">
+                                <li><a><i></i>{{Auth::user()->name}}</a>
+                                </li>
+                                <li><a href="{{route('userpanel.index')}}"><i class="fa fa-user "></i>  My Profile</a>
+                                </li>
+                                <li><a href="#"><i class="fa fa-newspaper-o"></i>  My News</a>
+                                </li>
+                                <li><a href="#"><i class="fa fa-facebook"></i>  My Comments</a>
+                                </li>
+                                <li><a href="#"><i class="fa fa-twitter"></i>  My Reviews</a>
+                                </li>
+                                <li><a href="/logoutuser"><i class="fa fa-sign-out fa-fw"></i>  Log Out</a>
+                                </li>
+                            </ul>
+                            </ul>
                     @endauth
                     @guest
                         <!-- dropdown user-->
