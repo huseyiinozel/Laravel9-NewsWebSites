@@ -15,7 +15,7 @@
 
             </div>
             <div class="col-md-8">
-                <h1 class="page-header">User Comments + Reviews</h1>
+                <h1 class="page-header">User Comments & Reviews</h1>
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
@@ -49,7 +49,7 @@
 
 
 
-                                <td><a href="{{route('userpanel.reviewdestroy',['id'=>$rs->id])}}" class="btn btn-primary btn-danger"
+                                <td><a href="{{route('userpanel.reviewdestroy',['id'=>$rs->id])}}" class="button button-primary"
                                        onclick="return confirm ('Deleting !! Are you sure ?')">Delete</a> </td>
 
                             </tr>

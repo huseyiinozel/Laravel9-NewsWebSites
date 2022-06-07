@@ -57,7 +57,7 @@ Route::get('/param/{id}/{number}',[HomeController::class,'param'])->name('param'
 
 Route::post('/save',[HomeController::class,'save'])->name('save');
 
-Route::get('/news/{id}',[HomeController::class,'news'])->name('news');
+Route::get('/news/{id}/{slug}',[HomeController::class,'news'])->name('news');
 Route::get('/categorynews/{id}/{slug}',[HomeController::class,'categorynews'])->name('categorynews');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

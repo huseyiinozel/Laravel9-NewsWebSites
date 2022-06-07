@@ -19,7 +19,7 @@
 
                             </ul>
 
-                            <h1 class="slide-title"><a href="{{route('news',['id'=>$rs->id])}}" title="">{{$rs->title}}</a></h1>
+                            <h1 class="slide-title"><a href="{{route('news',['id'=>$rs->id,'slug'=>$rs->slug])}}" title="">{{$rs->title}}</a></h1>
                         </div>
 
                     </div>

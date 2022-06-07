@@ -152,13 +152,13 @@
 
                     <div class="pagenav group">
                         <div class="prev-nav">
-                            <a href="{{route('news',['id'=>$data->id-1])}}" rel="prev">
+                            <a href="{{route('news',['id'=>$data->id-1,'slug'=>$data->slug])}}" rel="prev">
                                 Previous
                                 <span>News</span>
                             </a>
                         </div>
                         <div class="next-nav">
-                            <a href="{{route('news',['id'=>$data->id+1])}}" rel="next">
+                            <a href="{{route('news',['id'=>$data->id+1,'slug'=>$data->slug])}}" rel="next">
                                 Next
                                 <span>News</span>
 

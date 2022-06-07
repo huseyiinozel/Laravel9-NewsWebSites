@@ -31,7 +31,7 @@
                 <article class="brick entry format-standard animate-this">
 
                     <div class="entry-thumb">
-                        <a href="{{route('news',['id'=>$rs->id])}}" class="thumb-link">
+                        <a href="{{route('news',['id'=>$rs->id,'slug'=>$rs->slug])}}" class="thumb-link">
                             <img src="{{Storage::url($rs->image)}}" alt="building">
                         </a>
                     </div>
@@ -45,7 +45,7 @@
                			</span>
                             </div>
 
-                            <h1 class="entry-title"><a href="{{route('news',['id'=>$rs->id])}}">{{$rs->title}}</a></h1>
+                            <h1 class="entry-title"><a href="{{route('news',['id'=>$rs->id,'slug'=>$rs->slug])}}">{{$rs->title}}</a></h1>
 
                         </div>
                         <div class="entry-excerpt">
