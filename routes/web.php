@@ -67,9 +67,11 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 // user auth control
 Route::middleware('auth')->group(function(){
 
-    //user route
+    //user panel route
     Route::prefix('userpanel')->name('userpanel.')->controller(UserController::class)->group(function() {
         Route::get('/','index' )->name('index');
+        Route::get('/reviews','reviews' )->name('reviews');
+        Route::get('/reviewdestroy/{id}', 'reviewdestroy')->name('reviewdestroy');
 
     });
 // admin panel

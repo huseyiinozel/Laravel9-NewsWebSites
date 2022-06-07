@@ -47,14 +47,13 @@
                             <ul class="sub-menu">
                                 <li><a><i></i>{{Auth::user()->name}}</a>
                                 </li>
-                                <li><a href="{{route('userpanel.index')}}"><i class="fa fa-user "></i>  My Profile</a>
+                                <li><a href="{{route('userpanel.index')}}"><i class="fa fa-user fa-fw"></i>My Profile</a>
                                 </li>
-                                <li><a href="#"><i class="fa fa-newspaper-o"></i>  My News</a>
+                                <li><a href="#"><i class="fa fa-user-md fa-fw"></i>My News</a>
                                 </li>
-                                <li><a href="#"><i class="fa fa-facebook"></i>  My Comments</a>
+                                <li><a href="{{route('userpanel.reviews')}}"><i class="fa fa-user-md fa-fw"></i>My Reviews</a>
                                 </li>
-                                <li><a href="#"><i class="fa fa-twitter"></i>  My Reviews</a>
-                                </li>
+
                                 <li><a href="/logoutuser"><i class="fa fa-sign-out fa-fw"></i>  Log Out</a>
                                 </li>
                             </ul>
