@@ -36,17 +36,15 @@
                 <a href="/admin"><i class="fa fa-home"style="color:lightgreen"></i> Dashboard</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-th-large "style="color:yellow"></i> News<span class="fa arrow"></span></a>
+                <a href=""><i class="fa fa-th-large "style="color:yellow"></i> News<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="{{asset('assets')}}/admin/flot.html">Add News</a>
+                        <a href="/admin/news/create">Add News</a>
                     </li>
                     <li>
-                        <a href="{{asset('assets')}}/admin/morris.html">Waiting News</a>
+                        <a href="/admin/news">Waiting News</a>
                     </li>
-                    <li>
-                        <a href="{{asset('assets')}}/admin/morris.html">Published News</a>
-                    </li>
+
                 </ul>
                 <!-- second-level-items -->
             </li>
@@ -66,9 +64,7 @@
             <li class="">
                 <a href="{{route('admin.message.index')}}"><i class="fa fa-comment-o"style="color:lightgreen"></i> Messages</a>
             </li>
-            <li class="">
-                <a href="/admin/social"><i class="fa fa-twitter"style="color:blue"></i> Social</a>
-            </li>
+
             <li class="">
                 <a href="/admin/user"><i class="fa fa-users"style="color:green"></i> Users</a>
             </li>

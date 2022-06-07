@@ -44,7 +44,7 @@
                                 <td>{{$rs->id}}</td>
 
                                 <td>{{$rs->user->name}} </td>
-                                <td><a  href="{{route('admin.news.show',['id'=>$rs->news_id])}}" >{{$rs->news->title}} </td>
+                                <td><a  href="{{route('admin.news.show',['id'=>$rs->news_id,'slug'=>$rs->slug])}}" >{{$rs->news->title}} </td>
                                 <td>{{$rs->subject}} </td>
                                 <td>{{$rs->review}} </td>
                                 <td>{{$rs->rate}} </td>
@@ -52,10 +52,10 @@
 
 
 
-                                <td><a href="{{route('admin.comment.show',['id'=>$rs->id])}}" class="btn btn-primary btn-success"
+                                <td><a href="{{route('admin.comment.show',['id'=>$rs->id,'slug'=>$rs->slug])}}" class="btn btn-primary btn-success"
                                        onclick="return !window.open(this.href,'','top=50 left=100 width=1100,height=700')">Show</a> </td>
 
-                                <td><a href="{{route('admin.comment.destroy',['id'=>$rs->id])}}" class="btn btn-primary btn-danger"
+                                <td><a href="{{route('admin.comment.destroy',['id'=>$rs->id,'slug'=>$rs->slug])}}" class="btn btn-primary btn-danger"
                                     onclick="return confirm ('Deleting !! Are you sure ?')">Delete</a> </td>
 
                             </tr>

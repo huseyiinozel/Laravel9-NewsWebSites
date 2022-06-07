@@ -92,6 +92,7 @@ class HomeController extends Controller
     {
         // dd($request); //check
         $data =new Comment();
+        $data->slug = $request->input('slug');
         $data->user_id = Auth::id();
         $data->news_id = $request->input('news_id');
         $data->subject = $request->input('subject');
@@ -99,7 +100,7 @@ class HomeController extends Controller
         $data->rate = $request->input('rate');
         $data->ip=request()->ip();
         $data->save();
-        return redirect()->route('news',['id'=>$request->input('news_id')])->with('success','Your comment has been sent, Thank you');
+        return redirect()->route('news',['id'=>$request->input('news_id'),'slug'=>$data->slug])->with('success','Your comment has been sent, Thank you');
 
 
 

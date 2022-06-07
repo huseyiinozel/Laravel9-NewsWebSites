@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer('user_id');
             $table->integer('news_id');
             $table->string('subject',100);
+            $table->string('slug',100);
             $table->string('review')->nullable();
             $table->string('IP',20)->nullable();
             $table->integer('rate')->default('0');

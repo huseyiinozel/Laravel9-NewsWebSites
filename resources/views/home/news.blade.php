@@ -260,6 +260,9 @@
                                 <div class="form-field">
                                     <input name="news_id" type="hidden" id="news_id" class="full-width" placeholder="news id" value="{{$data->id}}">
                                 </div>
+                                <div class="form-field">
+                                    <input name="slug" type="hidden" id="slug" class="full-width" placeholder="news id" value="{{$data->slug}}">
+                                </div>
 
                                 <div class="form-field">
                                     <input name="subject" type="text" id="subject" class="full-width" placeholder="subject" value="{{$data->subject}}">

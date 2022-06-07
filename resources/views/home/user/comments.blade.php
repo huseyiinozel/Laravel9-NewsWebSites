@@ -40,7 +40,7 @@
                                 <td>{{$rs->id}}</td>
 
 
-                                <td><a  href="{{route('news',['id'=>$rs->news_id])}}" >{{$rs->news->title}} </td>
+                                <td><a  href="{{route('news',['id'=>$rs->news_id,'slug'=>$rs->slug])}}" >{{$rs->news->title}} </td>
                                 <td>{{$rs->subject}} </td>
                                 <td>{{$rs->review}} </td>
                                 <td>{{$rs->rate}} </td>
@@ -48,9 +48,9 @@
 
 
 
-
-                                <td><a href="{{route('userpanel.reviewdestroy',['id'=>$rs->id])}}" class="button button-primary"
+                                <td><a href="{{route('userpanel.reviewdestroy',['id'=>$rs->id,'slug'=>$rs->slug])}}" class="button button-primary"
                                        onclick="return confirm ('Deleting !! Are you sure ?')">Delete</a> </td>
+
 
                             </tr>
 
