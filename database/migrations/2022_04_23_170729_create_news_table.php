@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('news', function (Blueprint $table) {
             $table->id();
             $table->foreignId('category_id')->nullable();
-            $table->foreignId('user_id')->nullable();
+            $table->foreignId('user_id');
             $table->string('title');
             $table->string('keywords')->nullable();
             $table->string('description')->nullable();

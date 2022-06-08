@@ -48,6 +48,12 @@
                             <input type="text" class="form-control" name="slug" placeholder="Slug">
 
                         </div>
+                        <div >
+                            <input name="user_id" type="hidden" value="{{Auth::user()->id}}">
+                        </div>
+
+
+
                         <div class=form-group">
                             <label>Type</label>
                             <select class="form-control" name="type">
@@ -90,6 +96,14 @@
                         <div class="form-group">
                             <label>İmage</label>
                             <input type="file" name="image">
+                        </div>
+
+                        <div class=form-group">
+                            <label>Status</label>
+                            <select class="form-control" name="status" >
+                            <option>False</option>
+
+                            </select>
                         </div>
 
                         <button type="submit" class="btn btn-primary">Save</button>

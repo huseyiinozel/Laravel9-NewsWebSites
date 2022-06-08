@@ -34,8 +34,8 @@
 
 
 
-                                <th style="width: 40px">Delete</th>
                                 <th style="width: 40px">Show</th>
+                                <th style="width: 40px">Delete</th>
                             </tr>
                             </thead>
                             <tbody>

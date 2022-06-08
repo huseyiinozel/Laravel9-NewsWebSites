@@ -22,6 +22,7 @@
                         <h1 class="page-header">News List</h1>
                         <a  href="news/create"class="button button-primary">Add News</a>
                         <thead>
+                        @include('home.messages')
                         <tr>
 
                             <th style ="width:10px">Id </th>
@@ -59,6 +60,8 @@
                                     </a>
 
                                 </td>
+
+
                                 <td>{{$rs->status}}</td>
                                 <td><a href="{{route('userpanel.edit',['id'=>$rs->id])}}" class="btn btn-primary btn-info">Edit</a> </td>
                                 <td><a href="{{route('userpanel.destroy',['id'=>$rs->id])}}" class="btn btn-primary btn-danger"
