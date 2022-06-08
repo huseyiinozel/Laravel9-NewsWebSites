@@ -7,6 +7,7 @@ use App\Http\Controllers\AdminPanel\FaqController;
 use App\Http\Controllers\AdminPanel\ImageController;
 use App\Http\Controllers\AdminPanel\MessageController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminPanel\HomeController as AdminHomeController;
@@ -72,8 +73,24 @@ Route::middleware('auth')->group(function(){
         Route::get('/','index' )->name('index');
         Route::get('/reviews','reviews' )->name('reviews');
         Route::get('/reviewdestroy/{id}', 'reviewdestroy')->name('reviewdestroy');
+        Route::get('/news',[ NewsController::class,'index'])->name('news');
+        Route::get('/news/create',[NewsController::class, 'create'])->name('create');
+        Route::get('/news/edit/{id}',[NewsController::class, 'edit'])->name('edit');
+        Route::post('/news/store',[NewsController::class, 'store'])->name('news_store');
+        Route::get('/news/destroy/{id}',[NewsController::class, 'destroy'])->name('destroy');
+        Route::post('/news/update/{id}', [NewsController::class,'update'])->name('update');
+
+
+        });
+    Route::prefix('image')->name('image.')->controller(ImageController::class)->group(function () {
+        Route::get('/{nid}', 'index')->name('index');
+        Route::post('/store/{nid}', 'store')->name('user_store');
+        Route::get('/destroy/{nid}/{id}', 'destroy')->name('user_destroy');
+
+        });
 
     });
+
 // admin panel
 Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [AdminHomeController::class, 'index'])->name('index');
@@ -153,4 +170,4 @@ Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
 
 
 });
-});
+

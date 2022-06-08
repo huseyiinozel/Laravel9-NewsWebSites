@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comment;
+use App\Models\News;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -46,7 +47,21 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data=new News();
+        $data->category_id = $request->category_id;
+        $data->user_id = 0; //$request->user_id;
+        $data->title = $request->title;
+        $data->keywords = $request->keywords;
+        $data->description = $request->description;
+        $data->detail = $request->detail;
+        $data->slug = $request->slug;
+        $data->type = $request->type;
+        $data->status= $request->status;
+        if ($request->file('image')){
+            $data->image= $request->file('image')->store('images');
+        }
+        $data->save();
+        return redirect('userpanel/news');
     }
 
     /**
