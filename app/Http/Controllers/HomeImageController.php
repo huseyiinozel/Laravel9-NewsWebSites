@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
-class ImageController extends Controller
+class HomeImageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,6 +18,7 @@ class ImageController extends Controller
     public function index($nid)
     {
         $news= News::find($nid);
+
         //$images = Image::where('news_id',$nid);
         $images = DB::table('images')->where('news_id',$nid)->get();
 
@@ -46,7 +47,7 @@ class ImageController extends Controller
             $data->image= $request->file('image')->store('images');
         }
         $data->save();
-        return redirect()->route('home.user.imagecreate',['nid'=>$nid]);
+        return redirect()->route('userimagecreate.index',['nid'=>$nid]);
 
     }
 
@@ -97,6 +98,6 @@ class ImageController extends Controller
             Storage::delete($data->image);
         }
         $data->delete();
-        return redirect()->route('home.user.imagecreate',['nid'=>$nid]);
+        return redirect()->route('userimagecreate.index',['nid'=>$nid]);
     }
 }

@@ -7,6 +7,7 @@ use App\Http\Controllers\AdminPanel\FaqController;
 use App\Http\Controllers\AdminPanel\ImageController;
 use App\Http\Controllers\AdminPanel\MessageController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\HomeImageController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -80,14 +81,14 @@ Route::middleware('auth')->group(function(){
         Route::get('/news/destroy/{id}',[NewsController::class, 'destroy'])->name('destroy');
         Route::post('/news/update/{id}', [NewsController::class,'update'])->name('update');
 
-
-        });
-    Route::prefix('image')->name('image.')->controller(ImageController::class)->group(function () {
+    });
+    Route::prefix('/userimagecreate')->name('userimagecreate.')->controller(HomeImageController::class)->group(function () {
         Route::get('/{nid}', 'index')->name('index');
-        Route::post('/store/{nid}', 'store')->name('user_store');
-        Route::get('/destroy/{nid}/{id}', 'destroy')->name('user_destroy');
+        Route::post('/store/{nid}', 'store')->name('store');
+        Route::get('/destroy/{nid}/{id}', 'destroy')->name('destroy');
 
-        });
+    });
+
 
     });
 

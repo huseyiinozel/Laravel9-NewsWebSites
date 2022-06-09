@@ -130,23 +130,7 @@
                             <a href="{{route('categorynews',['id'=>$data->category->id,'slug'=>$data->category->slug])}}">{{$data->keywords}}</a>
                         </p>
 
-                        <div class="author-profile">
-                            <img src="images/avatars/user-05.jpg" alt="">
 
-                            <div class="about">
-                                <h4><a href="#">Jonathan Smith</a></h4>
-
-                                <p>Alias aperiam at debitis deserunt dignissimos dolorem doloribus, fuga fugiat impedit laudantium magni maxime nihil nisi quidem quisquam sed ullam voluptas voluptatum. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                </p>
-
-                                <ul class="author-social">
-                                    <li><a href="#">Facebook</a></li>
-                                    <li><a href="#">Twitter</a></li>
-                                    <li><a href="#">GooglePlus</a></li>
-                                    <li><a href="#">Instagram</a></li>
-                                </ul>
-                            </div>
-                        </div> <!-- end author-profile -->
 
                     </div> <!-- end entry-primary -->
 

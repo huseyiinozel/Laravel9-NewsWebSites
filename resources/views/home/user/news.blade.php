@@ -54,7 +54,7 @@
                                         <img src="{{Storage::url($rs->image)}}" style="height: 40px">
                                     @endif
                                 </td>
-                                <td> <a href="{{route('image.index',['nid'=>$rs->id])}}"
+                                <td> <a href="{{route('userimagecreate.index',['nid'=>$rs->id])}}"
                                         onclick="return !window.open(this.href, '','top=50 left=100 width=1100,height=700')">
                                         <img src="{{asset('assets')}}/admin/assets/img/gallery.jpg" style="height: 40px" >
                                     </a>

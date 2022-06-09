@@ -24,7 +24,7 @@
                     @foreach($newslist1 as $rs)
                     <article class="brick entry format-standard animate-this">
         <div class="entry-thumb">
-            <a href="{{route('news',['id'=>$rs->id,'slug'=>$rs->category->title])}}" class="thumb-link">
+            <a href="{{route('news',['id'=>$rs->id,'slug'=>$rs->slug])}}" class="thumb-link">
                 <img src="{{Storage::url($rs->image)}}"  alt="building">
             </a>
         </div>

@@ -1,13 +1,13 @@
-@extends('layouts.adminbase')
+@extends('layouts.adminwindow')
 
-@section('title', 'Add Category')
+@section('title', 'News Image Gallerry')
 
 
 @section('content')
     <h2>{{$news->title}}</h2>
     <hr>
 
-    <form role="form" action="{{route('image.store',['nid'=>$news->id])}}" method="post" enctype="multipart/form-data">
+    <form role="form" action="{{route('userimagecreate.store',['nid'=>$news->id])}}" method="post" enctype="multipart/form-data">
         @csrf
 
 
@@ -51,7 +51,7 @@
                             @endif
                         </td>
 
-                        <td><a href="{{route('image.destroy',['nid'=>$news->id,'id'=>$rs->id])}}" class="btn btn-primary btn-danger"
+                        <td><a href="{{route('userimagecreate.destroy',['nid'=>$news->id,'id'=>$rs->id])}}" class="btn btn-primary btn-danger"
                                onclick="return confirm ('Deleting !! Are you sure ?')">Delete</a> </td>
                     </tr>
 
@@ -63,10 +63,4 @@
 
 
 
-
-
-
-
-
 @endsection
-
