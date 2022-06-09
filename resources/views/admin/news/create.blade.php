@@ -91,12 +91,15 @@
 
                                 </div>
 
-
+                                <div class="form-group">
+                                    <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
+                                </div>
 
                                 <div class="form-group">
                                     <label>İmage</label>
                                     <input type="file" name="image">
                                 </div>
+
                                 <div class=form-group">
                                     <label>Status</label>
                                 <select class="form-control" name="status">

@@ -69,6 +69,9 @@
 
                         </div>
                         <div class="form-group">
+                            <input type="hidden" name="user_id" value="{{$data->user_id}}">
+                        </div>
+                        <div class="form-group">
                             <label>Detail</label>
 
                             <textarea class="textarea" id="detail" name="detail"  placeholder="Detail">

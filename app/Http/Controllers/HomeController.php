@@ -24,7 +24,7 @@ class HomeController extends Controller
     public  function index()
     {
         $page='home';
-        $sliderdata=News::limit(4)->get();
+        $sliderdata=News::where('status','True')->limit(4)->get();
         $newslist1=News::where('status','True')->get();
         $setting=Setting::first();
         return view('home.index',[
